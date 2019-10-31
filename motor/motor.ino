@@ -6,7 +6,7 @@ SoftwareSerial s(2,3);
 HCPCA9685 HCPCA9685(I2CAdd);
 
 int k[10];
-int x = 0, y = 0, z = 0;
+int x = 0, y = 0, z = 0; 
 int centerTop[] = { 100, 80, 70, 80, 70, 75, 135, 130, 135 };
 int centerBottom[] = { 0, 0, 45, 90, 135, 180, 315, 270, 225 };
 int edgeTop[] = { 60, 65, 50, 50, 40, 50, 82, 65, 55 };

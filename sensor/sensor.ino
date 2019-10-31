@@ -7,7 +7,7 @@ DHT11 dht11(A0);
 
 int flamePin[] = {A2, A3, A4, A5};
 const int smokePin = A1;
-float humi, temp;
+float humi, temp; 
 int flame[] = {0, 0, 0, 0};
 int smoke;
 int data = 0;
