@@ -2,7 +2,6 @@
 #include <DHT11.h>
 #include <ArduinoJson.h>
 
-SoftwareSerial s(2,3);
 DHT11 dht11(A0);
 
 int flamePin[] = {A2, A3, A4, A5};
@@ -16,18 +15,12 @@ void sensors();
 
 void setup() {
   Serial.begin(9600);
-  s.begin(9600);
   for(int i = 0; i<4; i++){
     pinMode(flamePin[i], INPUT);
   }
 }
 
 void loop() {
-  if(s.available()) {
-    data = s.read();
-  } else{
-    data = 0;
-  }
   sensors();
   delay(5000);
 }
