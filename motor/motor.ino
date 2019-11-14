@@ -7,7 +7,7 @@ HCPCA9685 HCPCA9685(I2CAdd);
 int k[10];
 int x = 0, y = 0, z = 0;
 int edgeTop[] = { 90, 90, 90, 28, 55, 65, 0, 35, 50 };
-int edgeBottom[] = { 90, 65, 50, 72, 60, 50, 55, 53, 45 };
+int edgeBottom[] = { 90, 65, 50, 72, 60, 50, 55, 50, 40 };
 int raspData;
 int temp;
 
@@ -21,7 +21,7 @@ void recieveData();
 void setup() {
   Serial.begin(9600);
   HCPCA9685.Init(SERVO_MODE);
-  HCPCA9685.Sleep(true);
+    HCPCA9685.Sleep(false);
 }
 
 void loop() {
@@ -73,7 +73,6 @@ void recieveData(){
     raspData = Serial.parseInt();
     Serial.println(raspData);
     angle(raspData);
-    HCPCA9685.Sleep(false);
     turnEdge(raspData);
   }
 }
